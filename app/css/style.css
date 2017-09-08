@@ -1,0 +1,20 @@
+body {
+  background-color: #EDF0F3;
+  color: #2D2E30;
+  padding: 0;
+  margin: 0; }
+
+header {
+  width: 100%;
+  background-color: #22bf9f; }
+
+#header-title {
+  padding: 10px 30px 10px 30px;
+  color: #E7E7E7; }
+
+#nav-options {
+  padding: 5px 30px 5px 30px;
+  border-bottom: 1px #D2D8D9 solid; }
+
+.content {
+  padding: 15px 0 15px 30px; }
