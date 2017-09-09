@@ -45,17 +45,31 @@ a{
 }
 
 #list{
-	padding-top:15px;
 	overflow-y: auto;
 	height:520px;
+	width: calc(40% - 15px);
+	display: inline-block;
 }
 
 #map{
 	height:520px;
+	width: calc(60% - 15px);
+	display: inline-block;
+}
+
+@media screen and (max-width:999px) {
+   #list{
+   	width: calc(100%);
+   	margin-bottom: 15px;
+   }
+   #map{
+   	width: calc(100%);
+   }
 }
 
 .content{
-	padding: 0px $side-padding 15px $side-padding;
+	padding: 15px 0 15px 0;
+	text-align: center;
 }
 
 .rating{
