@@ -9,6 +9,10 @@ header {
   width: 100%;
   background-color: #22bf9f; }
 
+h2 {
+  display: inline;
+  margin-left: 10px; }
+
 h4 {
   margin-bottom: 0px;
   font-size: 1.5em; }
@@ -18,7 +22,7 @@ a {
 
 #header-title {
   padding: 10px 30px 10px 30px;
-  color: #E7E7E7; }
+  color: #EFEEEE; }
 
 #nav-options {
   padding: 5px 30px 5px 30px;
