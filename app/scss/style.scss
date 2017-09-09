@@ -1,15 +1,16 @@
-$background-color: #EDF0F3;
-$main-color: #22bf9f;
-$accent-color: #2c3e50;
-$soft-color: #D2D8D9;
-$light-color: #E7E7E7;
-$dark-color: #2D2E30;
+$background-color: #EDF0F3;//Very light grey or slightly dark white
+$main-color: #22bf9f;//Aqua
+$accent-color: #2c3e50;//Navy
+$soft-color: #D2D8D9;//Lighter grey
+$light-color: #E7E7E7;//Wannabe white
+$dark-color: #2D2E30;//Wannabe black
 
 $side-padding: 30px;
 
 body{
 	background-color: $background-color;
 	color: $dark-color;
+	height: 100%;
 	padding: 0;
 	margin: 0;
 }
@@ -17,6 +18,15 @@ body{
 header{
 	width: 100%;
 	background-color: $main-color;
+}
+
+h4{
+	margin-bottom: 0px;
+	font-size: 1.5em;
+}
+
+a{
+	color: $main-color;
 }
 
 #header-title{
@@ -29,10 +39,20 @@ header{
 	border-bottom: 1px $soft-color solid;
 }
 
-.content{
-	padding: 15px 0 15px $side-padding;
+#list{
+	padding-top:15px;
+	overflow-y: auto;
+	height:520px;
 }
 
-.small-text{
-	
+#map{
+	height:520px;
+}
+
+.content{
+	padding: 0px $side-padding 15px $side-padding;
+}
+
+.rating{
+	color: $accent-color;
 }
