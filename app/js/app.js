@@ -1,7 +1,7 @@
 (function() {
   var app = angular.module('melp', []);
 
-  app.controller('RestaurantsController', function($scope, $http) {
+  app.controller('RestaurantsController', function($scope, $http, $filter) {
     $http.get("https://s3-us-west-2.amazonaws.com/lgoveabucket/data_melp.json").then(function (response) {
         $scope.restaurants = response.data;
     });
@@ -13,6 +13,12 @@
       } 
       return ratings;
     }
+
+    $scope.sortBy = function(property){
+      console.log("sorting");
+      $scope.restaurants = $filter('orderBy')($scope.restaurants, property);
+    }
+
   });
 
 })();
