@@ -1,19 +1,19 @@
 $(document).ready(function(){
-  	getHeight();
-  	adaptResponsive();
+	getHeight();
+	adaptResponsive();
 
-   	$('.ui.dropdown').dropdown();
+	$('.ui.dropdown').dropdown();
 
-   	$('#showSection').click(function(){
-   		if($(window).width() < 999){
-    		showCorrectSection('#showSection');
-    	}
-   	});
+	$('#showSection').click(function(){
+		if($(window).width() < 999){
+			showCorrectSection('#showSection');
+		}
+	});
 });
 
 window.onresize = function() {
-    getHeight();
-    adaptResponsive();
+	getHeight();
+	adaptResponsive();
 }
 
 function adaptResponsive(){
@@ -21,7 +21,7 @@ function adaptResponsive(){
 		$('#infoModal').removeClass('mini');
 		$('#infoModal').addClass('large');
 		$('#showSection').removeClass('active');
-    	showCorrectSection('#showSection');
+		showCorrectSection('#showSection');
 	}else{
 		$('#infoModal').removeClass('large');
 		$('#infoModal').addClass('mini');
