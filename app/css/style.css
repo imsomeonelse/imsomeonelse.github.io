@@ -56,7 +56,7 @@ a {
 @media screen and (max-width: 999px) {
   #list, #map-container {
     width: 100%; }
-  .ui.menu, body, .ui.button, .ui.mini.modal {
+  .ui.menu, body, .ui.button, .ui.modal {
     font-size: 2.5rem; }
   h2 {
     font-size: 4rem; }

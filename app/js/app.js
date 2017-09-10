@@ -55,8 +55,7 @@
 
     $scope.selectRestaurant = function(index){
       $scope.selected = $scope.restaurants[index];
-      $('.mini.modal').modal('show');
-
+      $('.modal').modal('show');
 
       $("#share").jsSocials({
         showLabel: false,
