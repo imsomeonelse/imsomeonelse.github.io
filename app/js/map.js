@@ -36,7 +36,6 @@ function getStats(){
 
     var latlng = {"lat":parseFloat(lat) , "lng":parseFloat(lng)};
     if(bounds.contains(latlng)){
-      console.log(restaurants[i].name);
       count++;
       average+=restaurants[i].rating;
     }
@@ -48,10 +47,12 @@ function getStats(){
 
     var latlng = {"lat":parseFloat(lat) , "lng":parseFloat(lng)};
     if(bounds.contains(latlng)){
-      deviation+=(restaurants[i].rating-average)^2
+      deviation+=Math.pow(restaurants[i].rating-average,2);
     }
   }
+  console.log(deviation);
   deviation/=count;
+  console.log(deviation);
   deviation = Math.sqrt(deviation);
 
   $('#count').html(count);
@@ -93,6 +94,8 @@ function loadMarkersFromJson(jsonFile){
 
             var marker = new google.maps.Marker({
                 title: restaurantsData[i].name,
+                rating: restaurantsData[i].rating,
+                site: restaurantsData[i].contact.site,               
                 address: restaurantsData[i].address.street+', '+restaurantsData[i].address.city+', '+restaurantsData[i].address.state,
                 position: latlng,
                 icon:'./img/restaurant-pin.png',
@@ -104,7 +107,7 @@ function loadMarkersFromJson(jsonFile){
         for (var i = 0, l=restaurantsSize; i <l; i++){
           var infowindow = new google.maps.InfoWindow();
           google.maps.event.addListener(markers[i], 'click', function(){
-            infowindow.setContent('<div><strong>'+this.title+'</strong><br>'+this.address);
+            infowindow.setContent('<div><strong>'+this.title+'</strong><small> '+this.rating+' estrellas</small><br>'+this.address+'<br>'+this.site);
             map.setCenter(this.getPosition());
             infowindow.open(map, this);
           });
@@ -138,6 +141,7 @@ function showMap() {
 	});
 	
 	var marker0 = new google.maps.Marker({
+        draggable: true,
 				position: currentLoc,
         icon:'./img/location-pin.png',
 				map: map,
@@ -156,6 +160,14 @@ function showMap() {
     map.setCenter(marker0.getPosition());
     infowindow0.open(map, marker0);
   });
+
+  google.maps.event.addListener(marker0, "dragend", function(event) { 
+      var lat = event.latLng.lat(); 
+      var lng = event.latLng.lng();
+      currentLoc = new google.maps.LatLng(lat, lng);
+      bounds = cityCircle.getBounds(); 
+      getStats();
+  }); 
 	
 	var input = document.getElementById('place');
     var options = {
@@ -166,17 +178,11 @@ function showMap() {
 	autocomplete.bindTo('bounds', map);
 
   var infowindow = new google.maps.InfoWindow();
-  var marker = new google.maps.Marker({
-    map: map,
-    anchorPoint: new google.maps.Point(0, -29)
-  });
 
   autocomplete.addListener('place_changed', function() {
 	infowindow0.close();
-    marker0.setVisible(false);
 	cityCircle.setMap(null);
     infowindow.close();
-    marker.setVisible(false);
     var place = autocomplete.getPlace();
     if (!place.geometry) {
       window.alert("Autocomplete's returned place contains no geometry");
@@ -190,15 +196,7 @@ function showMap() {
       map.setCenter(place.geometry.location);
       map.setZoom(16);  // Why 17? Because it looks good.
     }
-    marker.setIcon(/** @type {google.maps.Icon} */({
-      url: 'pin2.png',
-      size: new google.maps.Size(71, 71),
-      origin: new google.maps.Point(0, 0),
-      anchor: new google.maps.Point(17, 34),
-      scaledSize: new google.maps.Size(35, 35)
-    }));
-    marker.setPosition(place.geometry.location);
-    marker.setVisible(true);
+    marker0.setPosition(place.geometry.location);
 
 	la=place.geometry.location.lat();
 	lo=place.geometry.location.lng();
@@ -211,9 +209,11 @@ function showMap() {
         (place.address_components[2] && place.address_components[2].short_name || '')
       ].join(' ');
     }
-	cityCircle.setOptions({center:place.geometry.location, fillColor: '#E42D9F', map:map});
+	cityCircle.setOptions({center:place.geometry.location, map:map});
+  bounds = cityCircle.getBounds();
+  getStats();
 
     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
-    infowindow.open(map, marker);
+    infowindow.open(map, marker0);
   });
 }
