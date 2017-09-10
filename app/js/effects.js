@@ -18,11 +18,13 @@ window.onresize = function() {
 
 function adaptResponsive(){
 	if($(window).width() < 999){
-		$('#infoModal').removeClass('tiny');
+		$('#infoModal').removeClass('mini');
 		$('#infoModal').addClass('large');
 		$('#showSection').removeClass('active');
     	showCorrectSection('#showSection');
 	}else{
+		$('#infoModal').removeClass('large');
+		$('#infoModal').addClass('mini');
 		$('#map-container').show();
 		$('#list').show();
 		$('#showSection').addClass('active');

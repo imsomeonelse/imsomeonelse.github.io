@@ -49,25 +49,29 @@
 				</div>
 
 				<div class="ui dropdown item" tabindex="0">
-					<i class="filter icon"></i>Filter
+					<i class="filter icon"></i>Filter map
 					<i class="dropdown icon"></i>
 					<div class="menu transition hidden" tabindex="-1">
 						<div class="item">
 							<div class="ui checkbox">
-								<input type="checkbox">
-								<label>Only near current pin</label>
+								<input type="checkbox" id="nearMe">
+								<label>Show only in radius</label>
 							</div>
 						</div>
 						<div class="divider"></div>
 						<div class="item">Radius: <span id="radius"></span> <div class="ui yellow range" id="radius-range"></div>
 						</div>
-						<div class="item">Rating above: <span id="rating"></span> <div class="ui yellow range" id="rating-range"></div></div>
-						<div class="item"><button id="filter-button" class="ui button" style="width: 100%">Apply</button></div>
+						<div class="item">Rating from: <span id="rating"></span> <div class="ui yellow range" id="rating-range"></div></div>
+						<div class="item">
+							<button id="filter-button" class="ui button" style="width: 100%" ng-click="filterIt()">
+							Apply
+							</button>
+						</div>
 					</div>
 				</div>
 
 				<div class="item">
-					Map
+					Location
 					<div class="ui action left icon input" style="margin-left:1em">
 						<i class="search icon"></i>
 						<input type="text" placeholder="Name" id="place">

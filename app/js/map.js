@@ -18,41 +18,73 @@ $(document).ready(function(){
   moveSliders();
 
   $('#filter-button').click(function(){
-    cityCircle.set('radius', radius);
-    bounds = cityCircle.getBounds();
-    zoom=radiusToZoom(radius/100);
-    map.setZoom(zoom);
-    getStats();
+    applyFilters();
   });
 });
+
+function applyFilters(){
+  cityCircle.set('radius', radius);
+  bounds = cityCircle.getBounds();
+  zoom=radiusToZoom(radius/100);
+  map.setZoom(zoom);
+
+  if($("#nearMe").is(':checked')){
+    filterCircle();
+    filterStars(true);   
+  }else{
+    showAll();
+    filterStars(false);
+  }
+  getStats();
+}
+
+function showAll(){
+  for (var i = 0, l=markers.length; i <l; i++){
+    markers[i].setVisible(true);
+  }
+}
+
+function filterStars(onlyCircle){
+  for (var i = 0, l=markers.length; i <l; i++){
+    if(markers[i].rating>=rating){
+      if(onlyCircle && bounds.contains(markers[i].position) || !onlyCircle){
+        markers[i].setVisible(true);
+      }else{
+        markers[i].setVisible(false);
+      }
+    }else{
+      markers[i].setVisible(false);
+    }
+  }
+}
+
+function filterCircle(){
+  for (var i = 0, l=markers.length; i <l; i++){
+    if(bounds.contains(markers[i].position)){
+      markers[i].setVisible(true);
+    }else{
+      markers[i].setVisible(false);
+    }
+  }
+}
 
 function getStats(){
   count=0;
   average=0;
   deviation=0;
-  for (var i = 0, l=restaurants.length; i <l; i++){
-    var lat = restaurants[i].address.location.lat;
-    var lng = restaurants[i].address.location.lng;
-
-    var latlng = {"lat":parseFloat(lat) , "lng":parseFloat(lng)};
-    if(bounds.contains(latlng)){
+  for (var i = 0, l=markers.length; i <l; i++){
+    if(bounds.contains(markers[i].position) && markers[i].getVisible()){
       count++;
-      average+=restaurants[i].rating;
+      average+=markers[i].rating;
     }
   }
   average/=count;
-  for (var i = 0, l=restaurants.length; i <l; i++){
-    var lat = restaurants[i].address.location.lat;
-    var lng = restaurants[i].address.location.lng;
-
-    var latlng = {"lat":parseFloat(lat) , "lng":parseFloat(lng)};
-    if(bounds.contains(latlng)){
-      deviation+=Math.pow(restaurants[i].rating-average,2);
+  for (var i = 0, l=markers.length; i <l; i++){
+    if(bounds.contains(markers[i].position)){
+      deviation+=Math.pow(markers[i].rating-average,2);
     }
   }
-  console.log(deviation);
   deviation/=count;
-  console.log(deviation);
   deviation = Math.sqrt(deviation);
 
   $('#count').html(count);
@@ -82,7 +114,7 @@ function moveSliders(){
 
 function loadMarkersFromJson(jsonFile){
   var req = $.getJSON(jsonFile, function (restaurantsData) {
-        var markers = [];
+        markers = [];
         var restaurantsSize = restaurantsData.length;
         for (var i = 0, l=restaurantsSize; i <l; i++){
 
@@ -114,7 +146,7 @@ function loadMarkersFromJson(jsonFile){
         }
   });
   req.done(function(){
-    getStats();
+    applyFilters();
   });
 }
 
@@ -165,8 +197,7 @@ function showMap() {
       var lat = event.latLng.lat(); 
       var lng = event.latLng.lng();
       currentLoc = new google.maps.LatLng(lat, lng);
-      bounds = cityCircle.getBounds(); 
-      getStats();
+      applyFilters();
   }); 
 	
 	var input = document.getElementById('place');
@@ -210,8 +241,7 @@ function showMap() {
       ].join(' ');
     }
 	cityCircle.setOptions({center:place.geometry.location, map:map});
-  bounds = cityCircle.getBounds();
-  getStats();
+  applyFilters();
 
     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
     infowindow.open(map, marker0);
