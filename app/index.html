@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap-grid.min.css" />
 	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/range.css" />
 
 	<!-- SCRIPTS -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js?key=AIzaSyBWpc-nLEyl2fkFW51Ey2XVTqUP0IPD5Lw"></script>
@@ -18,15 +19,26 @@
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/map.js"></script>
 	<script type="text/javascript" src="js/effects.js"></script>
+	<script type="text/javascript" src="js/range.js"></script>
 
 </head>
 <body ng-controller="RestaurantsController">
+
+	<!-- Facebook -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
 	<header id="header"><div id="header-title"><img src="img/restaurant-pin.png"/><h2>Melp</h2></div></header>
 	<nav id="nav-options">
 		<div class="ui secondary menu">
 			<div class="row">
-				<div class="ui icon item active"><i class="sidebar icon"></i></div>
-
+				<div class="active item" id="showSection"><i class="sidebar icon"></i></div>
 				<div class="ui dropdown item" tabindex="0">
 					<i class="sort icon"></i>Sort
 					<i class="dropdown icon"></i>
@@ -56,10 +68,10 @@
 							</div>
 						</div>
 						<div class="divider"></div>
-						<div class="item">
-							Radius 
+						<div class="item">Radius: <span id="radius"></span> <div class="ui yellow range" id="radius-range"></div>
 						</div>
-						<div class="item">Rating</div>
+						<div class="item">Rating above: <span id="rating"></span> <div class="ui yellow range" id="rating-range"></div></div>
+						<div class="item"><button id="filter-button" class="ui button" style="width: 100%">Apply</button></div>
 					</div>
 				</div>
 
@@ -70,9 +82,9 @@
 	<div class="content">
 		<div id="list" class="six wide column">
 			<table class="ui celled table">
-				<tr ng-repeat="restaurant in restaurants">
-					<td>
-						<h4>{{restaurant.name}}</h4>
+				<tr class="pointer" ng-class="{current: selected == $index }" ng-repeat="restaurant in restaurants">
+					<td ng-click="selectRestaurant($index)">
+						<h4><small><i class="food icon"></i></small>{{restaurant.name}}</h4>
 						<div class="rating">
 							<span ng-repeat="rating in range(restaurant.rating)"><i class="star icon"></i></span>
 							<small><a ng-href="{{restaurant.contact.site}}">{{restaurant.contact.site}}</a></small>
@@ -87,14 +99,55 @@
 			</table>
 		</div>
 
-		<div id="map" class="ten wide column">
-
+		<div id="map-container" class="ten wide column">
+			<div id="map"></div>
+			<div id="stats">
+			<table class="ui table">
+				<tr>
+					<td>Restaurants: </td>
+					<td id="count"></td>
+				</tr>
+				<tr>
+					<td>Average rating: </td>
+					<td id="average">{{average}}</td>
+				</tr>
+				<tr>
+					<td>Standard deviation: </td>
+					<td id="deviation"></td>
+				</tr>
+			</table>
+			</div>
 		</div>
 
 	</div>
-	<script>
-    	$('.ui.dropdown').dropdown();
-	</script>
+	
+	<!-- MODAL -->
+	<div class="ui mini modal" id="infoModal">
+		<div class="header">{{selected.name}}</div>
+		<div class="image content">
+			<img class="image" src="img/food.jpg" style="width: 100%;" />
+		</div>
+		<div class="content" style="padding-top: 0">
+			<div class="half" style="text-align: left;">
+				<div class="rating">
+					<span ng-repeat="rating in range(selected.rating)"><i class="star icon"></i></span>{{selected.rating}} estrellas
+				</div>
+			</div>
+			<div class="half" style="text-align: right;"><a ng-href="{{selected.contact.site}}">{{selected.contact.site}}</a></div>
+			<p/>
+			<div style="text-align: left;">
+				{{selected.address.street}}, {{selected.address.city}}, {{selected.address.state}}
+				<br/>
+				<strong>Phone:</strong> {{selected.contact.phone}}
+				<br/>
+				<strong>E-mail:</strong> {{selected.contact.email}}
+			</div>
+			<div style="text-align: right;">
+				<p/>
+				<div class="fb-like" data-href={{selected.contact.site}} data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+			</div>
+		</div>
+	</div>
 
 </body>
 </html>

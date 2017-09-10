@@ -19,6 +19,13 @@
       $scope.restaurants = $filter('orderBy')($scope.restaurants, property);
     }
 
+    $scope.selectRestaurant = function(index){
+      $scope.selected = $scope.restaurants[index];
+
+      $('.mini.modal')
+      .modal('show');
+    }
+
   });
 
 })();

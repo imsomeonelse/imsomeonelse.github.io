@@ -13,6 +13,7 @@ body{
 	height: 100%;
 	padding: 0;
 	margin: 0;
+	overflow: hidden;
 }
 
 header{
@@ -51,19 +52,41 @@ a{
 	display: inline-block;
 }
 
-#map{
+#stats{
+	position: absolute;
+  	right: 0px;
+  	top: 0px;
+  	z-index: 10;
+  	margin: 10px;
+  	background-color: $light-color;
+	border: 1px $soft-color solid;
+	border-radius: 10px;
+
+	table, tr, td{
+		border: none;
+	}
+}
+
+#map-container{
 	height:520px;
 	width: calc(60% - 15px);
 	display: inline-block;
+	position: relative;
 }
 
 @media screen and (max-width:999px) {
-   #list{
-   	width: calc(100%);
-   	margin-bottom: 15px;
+   #list, #map-container{
+   	width: 100%;
    }
-   #map{
-   	width: calc(100%);
+   .ui.menu, .ui.button, .ui.mini.modal{
+   	font-size: 2.5rem;
+   }
+   h2{
+   	font-size: 4rem;
+   }
+   body{
+   	overflow: auto;
+	@extend .ui.menu;
    }
 }
 
@@ -74,4 +97,13 @@ a{
 
 .rating{
 	color: $accent-color;
+}
+
+.half{
+	display: inline-block;
+	width: 49.5%;;
+}
+
+.pointer{
+	cursor: pointer;
 }
