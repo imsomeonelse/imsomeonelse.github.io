@@ -69,7 +69,7 @@ $(() => {
         closeProjects();
         closeContact();
 
-        _$sectionAbout.delay(500).fadeIn();
+        _$sectionAbout.delay(400).fadeIn();
     }
 
     let openExperience = () => {
@@ -78,7 +78,7 @@ $(() => {
         closeProjects();
         closeContact();
 
-        _$sectionExperience.delay(500).fadeIn();
+        _$sectionExperience.delay(400).fadeIn();
     }
 
     let openSkills = () => {
@@ -87,7 +87,7 @@ $(() => {
         closeProjects();
         closeContact();
 
-        _$sectionSkills.delay(500).fadeIn();
+        _$sectionSkills.delay(400).fadeIn();
     }
 
     let openProjects = () => {
@@ -96,7 +96,7 @@ $(() => {
         closeAbout();
         closeContact();
 
-        _$sectionProjects.fadeIn();
+        _$sectionProjects.delay(400).fadeIn();
     }
 
     let openContact = () => {
@@ -105,7 +105,7 @@ $(() => {
         closeProjects();
         closeAbout();
 
-        _$sectionContact.fadeIn();
+        _$sectionContact.delay(400).fadeIn();
     }
     
     let init = () => {

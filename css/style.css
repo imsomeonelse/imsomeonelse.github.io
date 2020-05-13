@@ -284,6 +284,13 @@ h5{
     font-size: smaller;
 }
 
+/* Contact */
+#contact-txt{
+    line-height: 2.5;
+}
+#contact-content{
+    display: flex;
+}
 
 
 /*Animation*/
