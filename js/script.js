@@ -69,7 +69,7 @@ $(() => {
         closeProjects();
         closeContact();
 
-        _$sectionAbout.fadeIn();
+        _$sectionAbout.delay(500).fadeIn();
     }
 
     let openExperience = () => {
@@ -78,7 +78,7 @@ $(() => {
         closeProjects();
         closeContact();
 
-        _$sectionExperience.fadeIn();
+        _$sectionExperience.delay(500).fadeIn();
     }
 
     let openSkills = () => {
@@ -87,7 +87,7 @@ $(() => {
         closeProjects();
         closeContact();
 
-        _$sectionSkills.fadeIn();
+        _$sectionSkills.delay(500).fadeIn();
     }
 
     let openProjects = () => {
