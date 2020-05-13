@@ -1,0 +1,26 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2020 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="mouse" unicode="&#xe800;" d="M551 130q28-80-17-157t-139-111q-94-28-175 9t-103 117l-106 384q-20 68 6 134t84 106l-96 186q-14 34 14 48 30 18 48-14l98-192q80 22 154-16t102-116z m-324 274q28 10 40 36t4 54q-10 28-35 41t-53 5q-28-10-40-36t-4-54q10-28 35-41t53-5z" horiz-adv-x="561" />
+
+<glyph glyph-name="right-dir-1" unicode="&#xe801;" d="M0 580l400-230-400-230 0 460z" horiz-adv-x="400" />
+
+<glyph glyph-name="pencil" unicode="&#xe802;" d="M718 680q32-32 47-64t15-48l0-16-252-252-290-288-238-52 50 240 290 288 252 252q54 12 126-60z m-494-640l24 24q-2 44-52 94-22 22-45 35t-35 13l-14 2-22-24-18-80q28-16 46-34 24-24 36-48z" horiz-adv-x="780" />
+
+<glyph glyph-name="mail" unicode="&#xe803;" d="M30 586q-32 18-28 40 2 14 26 14l846 0q38 0 20-32-8-14-24-22-14-6-192-102t-182-98q-16-10-46-10-28 0-46 10-4 2-182 98t-192 102z m850-100q20 10 20-10l0-368q0-16-17-32t-33-16l-800 0q-16 0-33 16t-17 32l0 368q0 20 20 10l384-200q18-10 46-10t46 10z" horiz-adv-x="900" />
+
+<glyph glyph-name="up-open" unicode="&#xe804;" d="M564 280q16-16 16-41t-16-41q-38-38-78 0l-196 188-196-188q-40-38-78 0-16 16-16 41t16 41l234 224q16 16 40 16t40-16z" horiz-adv-x="580" />
+
+<glyph glyph-name="down-open" unicode="&#xe805;" d="M564 422l-234-224q-18-18-40-18t-40 18l-234 224q-16 16-16 41t16 41q38 38 78 0l196-188 196 188q40 38 78 0 16-16 16-41t-16-41z" horiz-adv-x="580" />
+
+<glyph glyph-name="gamepad" unicode="&#xf11b;" d="M464 243v71q0 8-5 13t-13 5h-107v107q0 8-5 13t-13 5h-71q-8 0-13-5t-5-13v-107h-107q-8 0-13-5t-5-13v-71q0-8 5-13t13-5h107v-107q0-8 5-13t13-5h71q8 0 13 5t5 13v107h107q8 0 13 5t5 13z m322-36q0 30-21 51t-51 21-50-21-21-51 21-50 50-21 51 21 21 50z m143 143q0 30-21 51t-51 20-50-20-21-51 21-50 50-21 51 21 21 50z m142-71q0-119-83-202t-202-84q-107 0-189 71h-123q-81-71-188-71-119 0-202 84t-84 202 84 202 202 83h500q118 0 202-83t83-202z" horiz-adv-x="1071.4" />
+
+<glyph glyph-name="linkedin" unicode="&#xf318;" d="M204 698q0-40-29-68t-75-28q-44 0-72 28t-28 68q0 42 28 69t74 27 73-27 29-69z m-198-790l0 618 192 0 0-618-192 0z m306 420q0 86-4 198l166 0 10-86 4 0q60 100 190 100 100 0 161-67t61-199l0-366-192 0 0 342q0 134-98 134-70 0-98-72-6-12-6-48l0-356-194 0 0 420z" horiz-adv-x="900" />
+</font>
+</defs>
+</svg>

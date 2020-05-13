@@ -1,0 +1,301 @@
+@font-face {
+    font-family: 'fontello';
+    src: url('./font/fontello.eot?10511773');
+    src: url('./font/fontello.eot?10511773#iefix') format('embedded-opentype'),
+         url('./font/fontello.woff?10511773') format('woff'),
+         url('./font/fontello.ttf?10511773') format('truetype'),
+         url('./font/fontello.svg?10511773#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body{
+    margin:0;
+    padding:0;
+    background-color: rgb(247, 251, 251);
+}
+
+ul {
+    list-style:none;
+}
+ul, li { /* reset the margin and padding */
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    padding: 50px 0 50px 0;
+    display: grid;
+    grid-template-columns: 35% auto;
+    height: calc(100vh - 100px);
+    font-family: 'Raleway', sans-serif;
+}
+
+header{
+    height: calc(100% - 100px);
+    background-image: linear-gradient(to top right, rgb(36, 37, 37), rgb(65, 66, 66));
+    color: rgb(247, 251, 251);
+    padding: 50px;
+    display: grid;
+    grid-template-rows: 25% auto;
+}
+
+#title{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    text-align: right;
+}
+
+h3{
+    font-family: 'Montserrat Subrayada', sans-serif;
+    text-transform: uppercase;
+    /*letter-spacing: 10px;*/
+    font-size: 45px;
+    /*color: rgb(53, 54, 54);*/
+    color: rgba(212, 255, 19, 1);
+    padding: 0px;
+    margin: 0;
+}
+
+#headerContent{
+    display: grid;
+    grid-template-columns: 60% auto;
+}
+
+#picContainer{
+    display: flex;
+    justify-content: center;
+    z-index: 3;
+}
+
+nav{
+    z-index: 10;
+}
+
+nav ul{
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+li{
+    padding: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+nav ul li{
+    border-bottom: 1px solid rgb(247, 251, 251);
+    width: 175px;
+}
+
+main{
+    background-image: linear-gradient(to top left, rgb(210, 216, 216), rgb(233, 236, 236));
+}
+
+.profile-pic{
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+}
+
+
+/* Overlay */
+#overlay{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+
+#overlay .centered{
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 100px);
+    justify-content: center;
+    align-items: center;
+}
+
+.tilted{
+    -ms-transform: rotate(-5deg); /* IE 9 */
+    transform: rotate(-5deg); /* Standard syntax */
+}
+
+.black-tilted{
+    height: max-content;
+    padding: 50px;
+    background-color: rgb(43, 44, 44);
+}
+
+h1{
+    font-family: 'Montserrat Subrayada', sans-serif;
+    text-transform: uppercase;
+    /*letter-spacing: 10px;*/
+    font-size: 72px;
+    /*color: rgb(53, 54, 54);*/
+    color: rgb(255, 0, 106);
+    padding: 0px;
+    margin: 0;
+}
+
+h2{
+    color: rgb(247, 251, 251);
+    font-size: 18px;
+    text-align: left;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+h2:after {
+    display: inline-block;
+    content: "";
+    height: 1px;
+    background: rgb(247, 251, 251);
+    position: absolute;
+    width: 50%;
+    top: 25%;
+    margin-top: -2px;
+    margin-left: 10px;
+  }
+  
+h4{
+    margin: 0;
+    font-size: larger;
+}
+#spec-icons{
+    text-align: right;
+    font-size: 40px;
+    color:rgb(65, 66, 66);
+}
+#spec-icons i::before{
+    margin: 0!important;
+    padding: 5px 0;
+}
+#blurb{
+    display: flex;
+    position: relative;
+    top: -65%;
+    right: -75%;
+    width: 350px;
+    line-height: 2.5;
+    font-size: smaller;
+}
+
+
+/*Experience*/
+#experience{
+    height: calc(100vh - 100px);
+    overflow-y: scroll;
+}
+#exp-container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.timeline-container{
+    width: 500px;
+    display: grid;
+    grid-template-columns: 80px auto 30px 50px;
+    text-align: right;
+}
+.timeline-container ul li{
+    border-bottom: 1px solid rgb(64, 66, 66);
+}
+#timeline{
+    border-left: 2px solid rgb(64, 66, 66);
+    height: 100%;
+    position: relative;
+    left: 50%;
+    margin-left: -1px;
+    top: 0;
+}
+h5{
+    font-style: italic;
+
+}
+#text-container p{
+    line-height: 2.5;
+    font-size: smaller;
+}
+#years{
+    text-align: center;
+}
+#years i{
+    cursor: pointer;
+}
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: rgb(64, 66, 66);
+    border-radius: 50%;
+    position: relative;
+    left: -26%;
+    top: 25px;
+}
+
+
+/* Skills */
+#skills-container{
+    display: grid;
+    padding: 50px;
+    grid-template-columns: 33% 33% 33%;
+    text-align: center;
+}
+
+.vertical-line{
+    border-left: 1px solid rgb(163, 169, 169);
+}
+
+.vertical-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px);
+}
+
+#skills-container i{
+    font-size: xx-large;
+    color: rgb(255, 0, 106);
+    height: fit-content;
+}
+
+#skills-container h4{
+    padding: 30px 0;
+}
+#skills-container p{
+    margin: 0px;
+    padding: 0 30px;
+    line-height: 2.5;
+    font-size: 14px;
+}
+#skills-container h5{
+    font-style: normal;
+    color: rgb(255, 0, 106);
+}
+#skills-container span{
+    line-height: 2;
+    font-size: smaller;
+}
+
+
+
+/*Animation*/
+
+.delay-quart{
+    animation-delay: 0.25s;
+}
+.delay-mid{
+    animation-delay: 0.5s;
+}
+.delay-3quart{
+    animation-delay: 0.75s;
+}
+
+
