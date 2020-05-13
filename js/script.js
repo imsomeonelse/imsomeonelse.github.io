@@ -11,6 +11,9 @@ $(() => {
     let _$sectionProjects = '';
     let _$sectionContact = '';
 
+    let _$linksYears = [];
+    let _$sectionYears = [];
+
     let cacheDom = () => {
         _$linkAbout = $('#linkAbout');
         _$linkExperience = $('#linkExp');
@@ -23,6 +26,18 @@ $(() => {
         _$sectionSkills = $('#skills');
         _$sectionProjects = $('#projects');
         _$sectionContact = $('#contact');
+
+        _$sectionYears[0] = $("#2020");
+        _$sectionYears[1] = $("#2019");
+        _$sectionYears[2] = $("#2018");
+        _$sectionYears[3] = $("#2017");
+        _$sectionYears[4] = $("#2016");
+
+        _$linksYears[0] = $("#link2020");
+        _$linksYears[1] = $("#link2019");
+        _$linksYears[2] = $("#link2018");
+        _$linksYears[3] = $("#link2017");
+        _$linksYears[4] = $("#link2016");
     }
 
     let fx = () => {
@@ -41,6 +56,15 @@ $(() => {
         _$linkContact.click(()=>{
             openContact();
         });
+
+        for(let i=0; i<_$linksYears.length; i++){
+            _$linksYears[i].click(()=>{
+                _$sectionYears.forEach(element => {
+                    element.fadeOut();
+                });
+                _$sectionYears[i].delay(400).fadeIn();
+            });
+        }
     }
 
     let closeAbout = () => {

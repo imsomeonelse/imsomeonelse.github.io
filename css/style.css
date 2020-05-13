@@ -23,6 +23,11 @@ ul, li { /* reset the margin and padding */
     padding: 0;
 }
 
+a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+}
+
 #container{
     padding: 50px 0 50px 0;
     display: grid;
@@ -209,7 +214,7 @@ h4{
     border-bottom: 1px solid rgb(64, 66, 66);
 }
 #timeline{
-    border-left: 2px solid rgb(64, 66, 66);
+    border-left: 2px solid rgba(212, 255, 19, 1);
     height: 100%;
     position: relative;
     left: 50%;
@@ -221,8 +226,12 @@ h5{
 
 }
 #text-container p{
-    line-height: 2.5;
+    line-height: 2;
     font-size: smaller;
+}
+#text-container h4{
+    font-size: x-large;
+    color: rgb(255, 0, 106);
 }
 #years{
     text-align: center;
@@ -233,7 +242,7 @@ h5{
 .dot {
     height: 15px;
     width: 15px;
-    background-color: rgb(64, 66, 66);
+    background-color: rgba(212, 255, 19, 1);
     border-radius: 50%;
     position: relative;
     left: -26%;
