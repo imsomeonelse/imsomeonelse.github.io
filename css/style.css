@@ -214,7 +214,7 @@ h4{
     border-bottom: 1px solid rgb(64, 66, 66);
 }
 #timeline{
-    border-left: 2px solid rgba(212, 255, 19, 1);
+    border-left: 2px solid rgb(255, 0, 106);
     height: 100%;
     position: relative;
     left: 50%;
@@ -242,7 +242,7 @@ h5{
 .dot {
     height: 15px;
     width: 15px;
-    background-color: rgba(212, 255, 19, 1);
+    background-color: rgb(255, 0, 106);
     border-radius: 50%;
     position: relative;
     left: -26%;
