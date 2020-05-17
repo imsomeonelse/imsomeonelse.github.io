@@ -403,7 +403,7 @@ h5{
 /*Responsive*/
 @media only screen and (max-width: 1024px) {
     .horizontal-center{
-        margin: 0 auto;
+        margin: 50px auto;
     }
     #container {
         display: grid;
