@@ -382,6 +382,10 @@ h5{
     display: flex;
 }
 
+.horizontal-center{
+    margin: 0 auto;
+}
+
 
 /*Animation*/
 
@@ -405,6 +409,15 @@ h5{
         padding: 0px;
         height: 100vh;
     }
+    #aboutMe{
+        display: block!important;
+    }
+    #blurb-mobile{
+        font-size: smaller;
+        line-height: 2.5;
+        padding: 10px;
+        display: flex;
+    }
     .tilted{
         max-width: calc(80% - 20px);
     }
@@ -412,22 +425,7 @@ h5{
         font-size: 32px;
     }
     #overlay{
-        height: fit-content;
-        top:150px;
-    }
-    h2:after {
         display: none;
-    }
-    #blurb {
-        display: flex;
-        position: relative;
-        top: auto;
-        right: auto;
-        padding: 0 10px;
-        width: calc(100% - 20px);
-    }
-    #spec-icons i{
-        font-size: smaller;
     }
     nav{
         display: none;
