@@ -23,6 +23,11 @@ $(() => {
     let _$linksProjects = [];
     let _$indivProjects = [];
 
+    let _$dot = '';
+    let _$downBtn = '';
+    let _$upBtn = '';
+    let _currentYear = 0;
+
     let cacheDom = () => {
         _$linkAbout = $('#linkAbout');
         _$linkExperience = $('#linkExp');
@@ -65,6 +70,11 @@ $(() => {
         _$indivProjects[2] = $("#arr");
         _$indivProjects[3] = $("#kitsune");
         _$indivProjects[4] = $("#lost-spirit");
+
+        _$dot = $(".dot");
+
+        _$downBtn = $(".icon-down-open");
+        _$upBtn = $(".icon-up-open");
     }
 
     let fx = () => {
@@ -84,12 +94,36 @@ $(() => {
             openContact();
         });
 
+        _$upBtn.click(()=>{
+            if(_currentYear-1>=0){
+                _currentYear--;
+                _$sectionYears.forEach(element => {
+                    element.fadeOut();
+                });
+                _$dot.css("top", 30*(_currentYear+1)*1.5);
+                _$sectionYears[_currentYear].delay(500).fadeIn();
+            }
+        });
+
+        _$downBtn.click(()=>{
+            if(_currentYear+1<_$sectionYears.length){
+                _currentYear++;
+                _$sectionYears.forEach(element => {
+                    element.fadeOut();
+                });
+                _$dot.css("top", 30*(_currentYear+1)*1.5);
+                _$sectionYears[_currentYear].delay(500).fadeIn();
+            }
+        });
+
         for(let i=0; i<_$linksYears.length; i++){
             _$linksYears[i].click(()=>{
                 _$sectionYears.forEach(element => {
                     element.fadeOut();
                 });
+                _$dot.css("top", 30*(i+1)*1.5);
                 _$sectionYears[i].delay(500).fadeIn();
+                _currentYear = i;
             });
         }
 
