@@ -404,7 +404,6 @@ h5{
         grid-template-columns: auto;
         padding: 0px;
         height: 100vh;
-        overflow-y: scroll;
     }
     .tilted{
         max-width: calc(80% - 20px);
