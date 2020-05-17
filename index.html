@@ -56,7 +56,11 @@
 
         <header>
             <div id="title">
-                <h3>About me</h3>
+                <h3 id="title-about">About me</h3>
+                <h3 style="display: none;" id="title-exp">Experience</h3>
+                <h3 style="display: none;" id="title-skills">Skills</h3>
+                <h3 style="display: none;" id="title-projects">Projects</h3>
+                <h3 style="display: none;" id="title-contact">Contact</h3>
             </div>
             <div id="headerContent">
                 <nav>
@@ -231,21 +235,29 @@
                                 <h4>Kitsune</h4>
                                 <h5>Role: Tech Artist, UI Designer, Developer | Team Size: 4</h5>
                                 Kitsune is an action adventure game. I modeled, UV mapped and textured 
-                                all the 3D environmental assets with Autodesk Maya and Mudbox, as well as implemented the lighting and color grading 
-                                of the game to represent three different states of the day. For the low poly visuals, I manually programmed the shaders with CG and HLSL.
-                                I created all the sprites, particle effects, and the 2D assets for the UI. 
+                                the 3D environmental assets with Maya and Mudbox, and implemented the lighting and color grading 
+                                of the game. For the low poly visuals, I manually programmed the shaders with CG and HLSL.
+                                I created all the sprites, particle effects, and 2D assets for the UI. 
                             </div>
                         </div>
                         <div class="project-indiv" id="lost-spirit" style="display: none;">
                             <div class="project-img">
                                 <div class="cssbox">
-                                    <a id="image1" href="#image1">
+                                    <a id="image-ls1" href="#image-ls1">
                                       <img class="cssbox_thumb" src="img/lostspirit.png">
                                       <span class="cssbox_full">
                                         <img src="img/lostspirit.png">
                                       </span>
                                     </a>
+                                    <a id="image-ls2" href="#image-ls2">
+                                      <img class="cssbox_thumb">
+                                      <span class="cssbox_full">
+                                        <img src="img/lostspirit2.png">
+                                      </span>
+                                    </a>
                                     <a class="cssbox_close" href="#void"></a>
+                                    <a class="cssbox_prev" href="#image-ls1">&lt;</a>
+                                    <a class="cssbox_next" href="#imagels2">&gt;</a>
                                   </div>
                             </div>
                             <div class="project-desc">
@@ -259,13 +271,21 @@
                         <div class="project-indiv" id="silbato">
                             <div class="project-img">
                                 <div class="cssbox">
-                                    <a id="image1" href="#image1">
-                                      <img class="cssbox_thumb" src="img/lostspirit.png">
+                                    <a id="image-silbato1" href="#image-silbato1">
+                                      <img class="cssbox_thumb" src="img/silbato1.png">
                                       <span class="cssbox_full">
-                                        <img src="img/lostspirit.png">
+                                        <img src="img/silbato1.png">
+                                      </span>
+                                    </a>
+                                    <a id="image-silbato2" href="#image-silbato2">
+                                      <img class="cssbox_thumb">
+                                      <span class="cssbox_full">
+                                        <img src="img/silbato2.png">
                                       </span>
                                     </a>
                                     <a class="cssbox_close" href="#void"></a>
+                                    <a class="cssbox_prev" href="#image-silbato1">&lt;</a>
+                                    <a class="cssbox_next" href="#image-silbato2">&gt;</a>
                                   </div>
                             </div>
                             <div class="project-desc">
@@ -280,13 +300,21 @@
                         <div class="project-indiv" id="sulky" style="display: none;">
                             <div class="project-img">
                                 <div class="cssbox">
-                                    <a id="image1" href="#image1">
-                                      <img class="cssbox_thumb" src="img/lostspirit.png">
+                                    <a id="image-sulky1" href="#image-sulky1">
+                                      <img class="cssbox_thumb" src="img/sulky1.png">
                                       <span class="cssbox_full">
-                                        <img src="img/lostspirit.png">
+                                        <img src="img/sulky1.png">
+                                      </span>
+                                    </a>
+                                    <a id="image-sulky2" href="#image-sulky2">
+                                      <img class="cssbox_thumb">
+                                      <span class="cssbox_full">
+                                        <img src="img/sulky2.png">
                                       </span>
                                     </a>
                                     <a class="cssbox_close" href="#void"></a>
+                                    <a class="cssbox_prev" href="#image-sulky1">&lt;</a>
+                                    <a class="cssbox_next" href="#image-sulky2">&gt;</a>
                                   </div>
                             </div>
                             <div class="project-desc">
@@ -300,13 +328,21 @@
                         <div class="project-indiv" id="arr" style="display: none;">
                             <div class="project-img">
                                 <div class="cssbox">
-                                    <a id="image1" href="#image1">
-                                      <img class="cssbox_thumb" src="img/lostspirit.png">
+                                    <a id="image-arr1" href="#image-arr1">
+                                      <img class="cssbox_thumb" src="img/arr1.png">
                                       <span class="cssbox_full">
-                                        <img src="img/lostspirit.png">
+                                        <img src="img/arr1.png">
+                                      </span>
+                                    </a>
+                                    <a id="image-arr2" href="#image-arr2">
+                                      <img class="cssbox_thumb">
+                                      <span class="cssbox_full">
+                                        <img src="img/arr2.png">
                                       </span>
                                     </a>
                                     <a class="cssbox_close" href="#void"></a>
+                                    <a class="cssbox_prev" href="#image-arr1">&lt;</a>
+                                    <a class="cssbox_next" href="#image-arr2">&gt;</a>
                                   </div>
                             </div>
                             <div class="project-desc">
@@ -318,7 +354,7 @@
                             </div>
                         </div>
                         <div id="project-nav">
-                            <div id="link-silbato"><span>Silbato</span></div>
+                            <div id="link-silbato" style="opacity: 1;"><span>Silbato</span></div>
                             <div id="link-sulky"><span>Squirrels</span></div>
                             <div id="link-arr"><span>Arr!</span></div>
                             <div id="link-kitsune"><span>Kitsune</span></div>

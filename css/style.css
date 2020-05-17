@@ -345,7 +345,7 @@ h5{
     text-transform: uppercase;
 }
 #link-silbato{
-    opacity: 1!important;
+    opacity: 1;
     background-image: url('../img/silbato-tmb.png');
 }
 #link-sulky{

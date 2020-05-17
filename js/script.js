@@ -11,8 +11,17 @@ $(() => {
     let _$sectionProjects = '';
     let _$sectionContact = '';
 
+    let _$titleAbout = '';
+    let _$titleExperience = '';
+    let _$titleSkills = '';
+    let _$titleProjects = '';
+    let _$titleContact = '';
+
     let _$linksYears = [];
     let _$sectionYears = [];
+
+    let _$linksProjects = [];
+    let _$indivProjects = [];
 
     let cacheDom = () => {
         _$linkAbout = $('#linkAbout');
@@ -27,6 +36,12 @@ $(() => {
         _$sectionProjects = $('#projects');
         _$sectionContact = $('#contact');
 
+        _$titleAbout = $('#title-about');
+        _$titleExperience = $('#title-exp');
+        _$titleSkills = $('#title-skills');
+        _$titleProjects = $('#title-projects');
+        _$titleContact = $('#title-contact');
+
         _$sectionYears[0] = $("#2020");
         _$sectionYears[1] = $("#2019");
         _$sectionYears[2] = $("#2018");
@@ -38,6 +53,18 @@ $(() => {
         _$linksYears[2] = $("#link2018");
         _$linksYears[3] = $("#link2017");
         _$linksYears[4] = $("#link2016");
+
+        _$linksProjects[0] = $("#link-silbato");
+        _$linksProjects[1] = $("#link-sulky");
+        _$linksProjects[2] = $("#link-arr");
+        _$linksProjects[3] = $("#link-kitsune");
+        _$linksProjects[4] = $("#link-lostspirit");
+
+        _$indivProjects[0] = $("#silbato");
+        _$indivProjects[1] = $("#sulky");
+        _$indivProjects[2] = $("#arr");
+        _$indivProjects[3] = $("#kitsune");
+        _$indivProjects[4] = $("#lost-spirit");
     }
 
     let fx = () => {
@@ -62,29 +89,45 @@ $(() => {
                 _$sectionYears.forEach(element => {
                     element.fadeOut();
                 });
-                _$sectionYears[i].delay(400).fadeIn();
+                _$sectionYears[i].delay(500).fadeIn();
+            });
+        }
+
+        for(let i=0; i<_$linksProjects.length; i++){
+            _$linksProjects[i].click(()=>{
+                for(let i=0; i<_$linksProjects.length; i++){
+                    _$indivProjects[i].fadeOut();
+                    _$linksProjects[i].css("opacity", 0.5);
+                }
+                _$indivProjects[i].delay(400).fadeIn();
+                _$linksProjects[i].css("opacity",1);
             });
         }
     }
 
     let closeAbout = () => {
         _$sectionAbout.fadeOut();
+        _$titleAbout.fadeOut();
     }
 
     let closeExperience = () => {
         _$sectionExperience.fadeOut();
+        _$titleExperience.fadeOut();
     }
 
     let closeSkills = () => {
         _$sectionSkills.fadeOut();
+        _$titleSkills.fadeOut();
     }
 
     let closeProjects = () => {
         _$sectionProjects.fadeOut();
+        _$titleProjects.fadeOut();
     }
 
     let closeContact = () => {
         _$sectionContact.fadeOut();
+        _$titleContact.fadeOut();
     }
 
     let openAbout = () => {
@@ -93,7 +136,8 @@ $(() => {
         closeProjects();
         closeContact();
 
-        _$sectionAbout.delay(400).fadeIn();
+        _$sectionAbout.delay(500).fadeIn();
+        _$titleAbout.delay(500).fadeIn();
     }
 
     let openExperience = () => {
@@ -102,7 +146,8 @@ $(() => {
         closeProjects();
         closeContact();
 
-        _$sectionExperience.delay(400).fadeIn();
+        _$sectionExperience.delay(500).fadeIn();
+        _$titleExperience.delay(500).fadeIn();
     }
 
     let openSkills = () => {
@@ -111,7 +156,8 @@ $(() => {
         closeProjects();
         closeContact();
 
-        _$sectionSkills.delay(400).fadeIn();
+        _$sectionSkills.delay(500).fadeIn();
+        _$titleSkills.delay(500).fadeIn();
     }
 
     let openProjects = () => {
@@ -120,7 +166,8 @@ $(() => {
         closeAbout();
         closeContact();
 
-        _$sectionProjects.delay(400).fadeIn();
+        _$sectionProjects.delay(500).fadeIn();
+        _$titleProjects.delay(500).fadeIn();
     }
 
     let openContact = () => {
@@ -129,7 +176,8 @@ $(() => {
         closeProjects();
         closeAbout();
 
-        _$sectionContact.delay(400).fadeIn();
+        _$sectionContact.delay(500).fadeIn();
+        _$titleContact.delay(500).fadeIn();
     }
     
     let init = () => {
