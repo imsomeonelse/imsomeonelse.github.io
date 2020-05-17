@@ -416,7 +416,7 @@ h5{
         top:150px;
     }
     h2:after {
-        width: 20%;
+        display: none;
     }
     #blurb {
         display: flex;
