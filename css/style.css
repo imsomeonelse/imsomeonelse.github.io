@@ -300,23 +300,23 @@ h5{
     height: 500px;
     width: 800px;
 }
-#project-indiv{
+.project-indiv{
     display: grid;
     grid-template-columns: 450px 350px;
 }
-#project-indiv h4{
+.project-indiv h4{
     color: rgb(255, 0, 106);
 }
-#project-indiv h5{
+.project-indiv h5{
     font-style: normal;
     margin: 0px;
 }
-#project-desc{
+.project-desc{
     font-size: 12px;
     line-height: 2;
     padding: 0 40px;
 }
-#project-indiv img{
+.project-indiv img{
     width: 100%;
     height: auto;
     margin: 10px 0;
@@ -326,13 +326,47 @@ h5{
     display: flex;
     justify-content: space-between;
 }
-#project-nav div img{
+#project-nav div{
     margin: 15px 0;
     width: 120px;
     height: 120px;
     cursor: pointer;
     border-radius: 50%;
     border: 5px solid rgba(212, 255, 19, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-color: rgb(64, 66, 66);
+    opacity: 0.5;
+}
+#project-nav div span{
+    opacity: 0;
+    text-transform: uppercase;
+}
+#link-silbato{
+    opacity: 1!important;
+    background-image: url('../img/silbato-tmb.png');
+}
+#link-sulky{
+    background-image: url('../img/sulky-tmb.png');
+}
+#link-arr{
+    background-image: url('../img/arr-tmb.png');
+}
+#link-kitsune{
+    background-image: url('../img/kitsune-tmb.png');
+}
+#link-lostspirit{
+    background-image: url('../img/lostspirit-tmb.png');
+}
+#project-nav div:hover{
+    background-image: none;
+    background-color: rgba(212, 255, 19, 1);
+    opacity: 1!important;
+}
+#project-nav div:hover span{
+    opacity: 1;
 }
 
 /* Contact */

@@ -16,7 +16,7 @@
 <body>
     <div id="container">
 
-        <section id="overlay" style="display: none;">
+        <section id="overlay">
             <div class="centered">
                 <div class="tilted">
                     <div class="black-tilted fadeIn animated">
@@ -204,11 +204,11 @@
                 </div>
             </section>
 
-            <section id="projects">
+            <section id="projects" style="display: none;">
                 <div class="vertical-center">
                     <div id="projects-content">
-                        <div id="project-indiv">
-                            <div id="project-img">
+                        <div class="project-indiv" id="kitsune" style="display: none;">
+                            <div class="project-img">
                                 <div class="cssbox">
                                     <a id="image1" href="#image1">
                                       <img class="cssbox_thumb" src="img/kitsune6.png">
@@ -227,20 +227,102 @@
                                     <a class="cssbox_next" href="#image2">&gt;</a>
                                   </div>
                             </div>
-                            <div id="project-desc">
+                            <div class="project-desc">
                                 <h4>Kitsune</h4>
                                 <h5>Role: Tech Artist, UI Designer, Developer | Team Size: 4</h5>
-                                Kitsune is a 3D third-person, low poly, action adventure game. I modeled, UV mapped and textured 
-                                all the 3D environmental assets present in-game with Autodesk Maya and Mudbox, as well as implemented the lighting and color grading 
+                                Kitsune is an action adventure game. I modeled, UV mapped and textured 
+                                all the 3D environmental assets with Autodesk Maya and Mudbox, as well as implemented the lighting and color grading 
                                 of the game to represent three different states of the day. For the low poly visuals, I manually programmed the shaders with CG and HLSL.
                                 I created all the sprites, particle effects, and the 2D assets for the UI. 
                             </div>
                         </div>
+                        <div class="project-indiv" id="lost-spirit" style="display: none;">
+                            <div class="project-img">
+                                <div class="cssbox">
+                                    <a id="image1" href="#image1">
+                                      <img class="cssbox_thumb" src="img/lostspirit.png">
+                                      <span class="cssbox_full">
+                                        <img src="img/lostspirit.png">
+                                      </span>
+                                    </a>
+                                    <a class="cssbox_close" href="#void"></a>
+                                  </div>
+                            </div>
+                            <div class="project-desc">
+                                <h4>Lost Spirit</h4>
+                                <h5>Role: UI Designer, Developer | Team Size: 5</h5>
+                                Lost Spirit is a first person 3D puzzle. I designed and implemented the UI, including the 2D assets used.
+                                Mainly, my role was as developer, implementing mechanics, like lifting the block. The game was developed
+                                in Unreal Engine using blueprints.
+                            </div>
+                        </div>
+                        <div class="project-indiv" id="silbato">
+                            <div class="project-img">
+                                <div class="cssbox">
+                                    <a id="image1" href="#image1">
+                                      <img class="cssbox_thumb" src="img/lostspirit.png">
+                                      <span class="cssbox_full">
+                                        <img src="img/lostspirit.png">
+                                      </span>
+                                    </a>
+                                    <a class="cssbox_close" href="#void"></a>
+                                  </div>
+                            </div>
+                            <div class="project-desc">
+                                <h4>Proyecto Silbato</h4>
+                                <h5>Role: UI/UX Designer, Web Developer | Team Size: 4</h5>
+                                Proyecto Silbato was developed to combat sexual harassment in Mexico City. It is an 
+                                app for web and mobile that allows its users to make a report when they either witness
+                                or suffer an instance of harassment. This information is then collected into useful graphs 
+                                for the government. I developed the web version and worked as the UI/UX designer.
+                            </div>
+                        </div>
+                        <div class="project-indiv" id="sulky" style="display: none;">
+                            <div class="project-img">
+                                <div class="cssbox">
+                                    <a id="image1" href="#image1">
+                                      <img class="cssbox_thumb" src="img/lostspirit.png">
+                                      <span class="cssbox_full">
+                                        <img src="img/lostspirit.png">
+                                      </span>
+                                    </a>
+                                    <a class="cssbox_close" href="#void"></a>
+                                  </div>
+                            </div>
+                            <div class="project-desc">
+                                <h4>Sulky Squirrels</h4>
+                                <h5>Role: UI/UX Designer, Web Developer | Team Size: 2</h5>
+                                Sulky Squirrels is a 2D catapult game for web. Players can create and play their own levels. I created and implemented the UI, as well
+                                as coded the entirety of the level designer using JavaScript (ES7), HTML5, CSS3, and AJAX with 
+                                JSON to store the level information. 
+                            </div>
+                        </div>
+                        <div class="project-indiv" id="arr" style="display: none;">
+                            <div class="project-img">
+                                <div class="cssbox">
+                                    <a id="image1" href="#image1">
+                                      <img class="cssbox_thumb" src="img/lostspirit.png">
+                                      <span class="cssbox_full">
+                                        <img src="img/lostspirit.png">
+                                      </span>
+                                    </a>
+                                    <a class="cssbox_close" href="#void"></a>
+                                  </div>
+                            </div>
+                            <div class="project-desc">
+                                <h4>Arr! Space Pirates</h4>
+                                <h5>Role: UI/UX Designer, Web Developer | Team Size: 1</h5>
+                                Arr! Space Pirates is a battleship game for one or two players. I designed and implemented the UI. 
+                                I created all the logic of the game, including the CPU to play against the user. The tools I used 
+                                were vanilla JavaScript (ES7), HTML5, CSS3, and AJAX with JSON to store the highscore information.
+                            </div>
+                        </div>
                         <div id="project-nav">
-                            <div><img src="img/kitsune-tmb.png"></div>
-                            <div><img src="img/kitsune-tmb.png"></div>
-                            <div><img src="img/kitsune-tmb.png"></div>
-                            <div><img src="img/kitsune-tmb.png"></div>
+                            <div id="link-silbato"><span>Silbato</span></div>
+                            <div id="link-sulky"><span>Squirrels</span></div>
+                            <div id="link-arr"><span>Arr!</span></div>
+                            <div id="link-kitsune"><span>Kitsune</span></div>
+                            <div id="link-lostspirit"><span>Lost Spirit</span></div>
                         </div>
                     </div>
                 </div>
