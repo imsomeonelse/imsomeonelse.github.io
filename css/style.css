@@ -293,6 +293,48 @@ h5{
     font-size: smaller;
 }
 
+/* Projects */
+#project-content{
+    display: grid;
+    grid-template-rows: auto 150px;
+    height: 500px;
+    width: 800px;
+}
+#project-indiv{
+    display: grid;
+    grid-template-columns: 450px 350px;
+}
+#project-indiv h4{
+    color: rgb(255, 0, 106);
+}
+#project-indiv h5{
+    font-style: normal;
+    margin: 0px;
+}
+#project-desc{
+    font-size: 12px;
+    line-height: 2;
+    padding: 0 40px;
+}
+#project-indiv img{
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 7px;
+}
+#project-nav{
+    display: flex;
+    justify-content: space-between;
+}
+#project-nav div img{
+    margin: 15px 0;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 5px solid rgba(212, 255, 19, 1);
+}
+
 /* Contact */
 #contact-txt{
     line-height: 2.5;

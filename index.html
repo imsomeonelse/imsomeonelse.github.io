@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/style.css">
+    <link href="css/cssbox.css" rel="stylesheet">
     <link rel="stylesheet" href="css/animation.css">
     <link rel="stylesheet" href="css/fontello.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
@@ -204,10 +205,48 @@
             </section>
 
             <section id="projects">
-
+                <div class="vertical-center">
+                    <div id="projects-content">
+                        <div id="project-indiv">
+                            <div id="project-img">
+                                <div class="cssbox">
+                                    <a id="image1" href="#image1">
+                                      <img class="cssbox_thumb" src="img/kitsune6.png">
+                                      <span class="cssbox_full">
+                                        <img src="img/kitsune6.png">
+                                      </span>
+                                    </a>
+                                    <a id="image2" href="#image2">
+                                      <img class="cssbox_thumb">
+                                      <span class="cssbox_full">
+                                        <img src="img/kitsune1.png">
+                                      </span>
+                                    </a>
+                                    <a class="cssbox_close" href="#void"></a>
+                                    <a class="cssbox_prev" href="#image1">&lt;</a>
+                                    <a class="cssbox_next" href="#image2">&gt;</a>
+                                  </div>
+                            </div>
+                            <div id="project-desc">
+                                <h4>Kitsune</h4>
+                                <h5>Role: Tech Artist, UI Designer, Developer | Team Size: 4</h5>
+                                Kitsune is a 3D third-person, low poly, action adventure game. I modeled, UV mapped and textured 
+                                all the 3D environmental assets present in-game with Autodesk Maya and Mudbox, as well as implemented the lighting and color grading 
+                                of the game to represent three different states of the day. For the low poly visuals, I manually programmed the shaders with CG and HLSL.
+                                I created all the sprites, particle effects, and the 2D assets for the UI. 
+                            </div>
+                        </div>
+                        <div id="project-nav">
+                            <div><img src="img/kitsune-tmb.png"></div>
+                            <div><img src="img/kitsune-tmb.png"></div>
+                            <div><img src="img/kitsune-tmb.png"></div>
+                            <div><img src="img/kitsune-tmb.png"></div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
-            <section id="contact">
+            <section id="contact" style="display: none;">
                 <div id="contact-container" class="vertical-center">
                     <div id="contact-content">
                         <div id="triangle-container" class="slideInDown animated">
