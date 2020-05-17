@@ -403,7 +403,8 @@ h5{
         grid-template-rows: 100px auto;
         grid-template-columns: auto;
         padding: 0px;
-        height: min-content;
+        height: 100vh;
+        overflow-y: scroll;
     }
     .tilted{
         max-width: calc(80% - 20px);
@@ -431,6 +432,12 @@ h5{
     }
     nav{
         display: none;
+    }
+    #nav-mobile{
+        display: block!important;
+        width: 25px;    
+        position: absolute;
+        left: 20px;
     }
     .profile-pic {
         width: 100px;
