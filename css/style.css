@@ -401,6 +401,15 @@ h5{
 
 
 /*Responsive*/
+#menu{
+    background-color: rgb(43, 44, 44);
+    position: fixed;
+    left: 0px;
+    padding: 10px 20px;
+    z-index: 100;
+    display: none;
+}
+
 @media only screen and (max-width: 1024px) {
     .horizontal-center{
         margin: 50px auto 0px auto;

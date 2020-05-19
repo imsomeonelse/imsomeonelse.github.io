@@ -28,6 +28,9 @@ $(() => {
     let _$upBtn = '';
     let _currentYear = 0;
 
+    let _$linkMenu = '';
+    let _$menu = '';
+
     let cacheDom = () => {
         _$linkAbout = $('#linkAbout');
         _$linkExperience = $('#linkExp');
@@ -75,6 +78,9 @@ $(() => {
 
         _$downBtn = $(".icon-down-open");
         _$upBtn = $(".icon-up-open");
+
+        _$linkMenu = $('.icon-menu');
+        _$menu = $('#menu');
     }
 
     let fx = () => {
@@ -137,6 +143,10 @@ $(() => {
                 _$linksProjects[i].css("opacity",1);
             });
         }
+
+        _$linkMenu.click(() => {
+            _$menu.fadeToggle();
+        });
     }
 
     let closeAbout = () => {
