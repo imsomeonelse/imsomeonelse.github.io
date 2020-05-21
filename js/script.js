@@ -1,11 +1,13 @@
 $(() => {
     let _$linkAbout = '';
+    let _$linkAboutMobile = '';
     let _$linkExperience = '';
     let _$linkSkills = '';
     let _$linkProjects = '';
     let _$linkContact = '';
 
     let _$sectionAbout = '';
+    let _$sectionAboutMobile = '';
     let _$sectionExperience = '';
     let _$sectionSkills = '';
     let _$sectionProjects = '';
@@ -33,12 +35,14 @@ $(() => {
 
     let cacheDom = () => {
         _$linkAbout = $('#linkAbout');
+        _$linkAboutMobile = $('#linkAboutMobile');
         _$linkExperience = $('#linkExp');
         _$linkSkills = $('#linkSkills');
         _$linkProjects = $('#linkProjects');
         _$linkContact = $('#linkContact');
 
         _$sectionAbout = $('#overlay');
+        _$sectionAboutMobile = $('#aboutMe');
         _$sectionExperience = $('#experience');
         _$sectionSkills = $('#skills');
         _$sectionProjects = $('#projects');
@@ -84,6 +88,16 @@ $(() => {
     }
 
     let fx = () => {
+        _$linkAboutMobile.click(() => {
+            closeExperience();
+            closeSkills();
+            closeProjects();
+            closeContact();
+    
+            _$sectionAboutMobile.delay(500).fadeIn();
+            _$titleAbout.delay(500).fadeIn();
+
+        });
         _$linkAbout.click(()=>{
             openAbout();
         });
@@ -152,26 +166,32 @@ $(() => {
     let closeAbout = () => {
         _$sectionAbout.fadeOut();
         _$titleAbout.fadeOut();
+        _$sectionAboutMobile.fadeOut();
+        _$menu.fadeOut();
     }
 
     let closeExperience = () => {
         _$sectionExperience.fadeOut();
         _$titleExperience.fadeOut();
+        _$menu.fadeOut();
     }
 
     let closeSkills = () => {
         _$sectionSkills.fadeOut();
         _$titleSkills.fadeOut();
+        _$menu.fadeOut();
     }
 
     let closeProjects = () => {
         _$sectionProjects.fadeOut();
         _$titleProjects.fadeOut();
+        _$menu.fadeOut();
     }
 
     let closeContact = () => {
         _$sectionContact.fadeOut();
         _$titleContact.fadeOut();
+        _$menu.fadeOut();
     }
 
     let openAbout = () => {

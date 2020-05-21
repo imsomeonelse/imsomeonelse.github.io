@@ -398,7 +398,9 @@ h5{
 .delay-3quart{
     animation-delay: 0.75s;
 }
-
+#aboutMe{
+    display: none;
+}
 
 /*Responsive*/
 #menu{
@@ -408,6 +410,7 @@ h5{
     padding: 10px 20px;
     z-index: 100;
     display: none;
+    width: 200px;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -422,7 +425,7 @@ h5{
         height: 100vh;
     }
     #aboutMe{
-        display: block!important;
+        display: block;
     }
     #blurb-mobile{
         font-size: smaller;
