@@ -465,4 +465,14 @@ h5{
     header{
         display: flex;
     }
+    #contact-content{
+        width: calc(100% - 40px);
+        padding: 0 20px;
+    }
+    #skills-container {
+        grid-template-columns: auto;
+    }
+    .vertical-line{
+        border-left: 0px;
+    }
 }
