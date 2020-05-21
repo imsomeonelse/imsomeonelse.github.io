@@ -34,12 +34,12 @@ $(() => {
     let _$menu = '';
 
     let cacheDom = () => {
-        _$linkAbout = $('#linkAbout');
-        _$linkAboutMobile = $('#linkAboutMobile');
-        _$linkExperience = $('#linkExp');
-        _$linkSkills = $('#linkSkills');
-        _$linkProjects = $('#linkProjects');
-        _$linkContact = $('#linkContact');
+        _$linkAbout = $('.linkAbout');
+        _$linkAboutMobile = $('.linkAboutMobile');
+        _$linkExperience = $('.linkExp');
+        _$linkSkills = $('.linkSkills');
+        _$linkProjects = $('.linkProjects');
+        _$linkContact = $('.linkContact');
 
         _$sectionAbout = $('#overlay');
         _$sectionAboutMobile = $('#aboutMe');
