@@ -161,6 +161,13 @@ $(() => {
         _$linkMenu.click(() => {
             _$menu.fadeToggle();
         });
+
+        $(document).click((e) => {
+            let target = e.target;
+            if(target!=$(".icon-menu")[0]){
+                _$menu.fadeOut();
+            }
+        });
     }
 
     let closeAbout = () => {
