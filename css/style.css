@@ -444,6 +444,7 @@ h5{
         grid-template-columns: auto;
         padding: 0px;
         height: 100vh;
+        overflow-x: hidden;
     }
     #aboutMe{
         display: block;
