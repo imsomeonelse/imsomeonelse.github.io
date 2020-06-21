@@ -425,7 +425,7 @@ h5{
         background-color: rgb(247, 251, 251);
         background-image: none;
     }
-    .vertical-center {
+    #skills .vertical-center, #projects .vertical-center {
         align-items: normal;
     }
     .timeline-container{
@@ -490,11 +490,30 @@ h5{
     #contact-content{
         width: calc(100% - 40px);
         padding: 0 20px;
+        justify-content: center;
     }
     #skills-container {
         grid-template-columns: auto;
     }
     .vertical-line{
         border-left: 0px;
+    }
+    #project-nav{
+        display: grid;
+        padding: 50px;
+        grid-template-columns: auto auto;
+    }
+    .project-indiv img {
+        max-width: 80%;
+    }
+    .project-img{
+        text-align: center;
+        margin-top: 50px;
+    }
+    .project-indiv{
+        grid-template-columns: auto;
+    }
+    .project-desc {
+        font-size: 14px;
     }
 }
