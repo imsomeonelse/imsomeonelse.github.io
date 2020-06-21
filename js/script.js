@@ -93,6 +93,8 @@ $(() => {
             closeSkills();
             closeProjects();
             closeContact();
+            
+            $("#picContainer").fadeIn();
     
             _$sectionAboutMobile.delay(500).fadeIn();
             _$titleAbout.delay(500).fadeIn();
@@ -203,6 +205,7 @@ $(() => {
     }
 
     let openAbout = () => {
+        $("#picContainer").fadeIn();
         closeExperience();
         closeSkills();
         closeProjects();
@@ -210,7 +213,6 @@ $(() => {
 
         _$sectionAbout.delay(500).fadeIn();
         _$titleAbout.delay(500).fadeIn();
-        $("#picContainer").fadeIn();
     }
 
     let openExperience = () => {
