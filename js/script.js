@@ -175,6 +175,7 @@ $(() => {
         _$titleAbout.fadeOut();
         _$sectionAboutMobile.fadeOut();
         _$menu.fadeOut();
+        $("#picContainer").fadeOut();
     }
 
     let closeExperience = () => {
@@ -209,6 +210,7 @@ $(() => {
 
         _$sectionAbout.delay(500).fadeIn();
         _$titleAbout.delay(500).fadeIn();
+        $("#picContainer").fadeIn();
     }
 
     let openExperience = () => {
