@@ -414,6 +414,27 @@ h5{
 }
 
 @media only screen and (max-width: 1024px) {
+    #skills-container div{
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+    }
+    #skill-design, #skill-web{
+        border-bottom: 1px solid rgb(163, 169, 169);
+    }
+    main{
+        background-color: rgb(247, 251, 251);
+        background-image: none;
+    }
+    .vertical-center {
+        align-items: normal;
+    }
+    .timeline-container{
+        grid-template-columns: 250px 30px 50px;
+        width: 330px;
+    }
+    #triangle-container{
+        display: none;
+    }
     .horizontal-center{
         margin: 50px auto 0px auto;
     }
@@ -432,7 +453,8 @@ h5{
         line-height: 2.5;
         padding: 10px;
         display: flex;
-        width: calc(100% - 40px)
+        width: calc(100% - 40px);
+        margin: auto;
     }
     .tilted{
         max-width: calc(80% - 20px);
