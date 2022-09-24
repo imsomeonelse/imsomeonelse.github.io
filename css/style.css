@@ -210,7 +210,7 @@ h4{
     align-items: center;
 }
 .timeline-container{
-    width: 500px;
+    width: 650px;
     display: grid;
     grid-template-columns: 80px auto 30px 50px;
     text-align: right;
@@ -251,7 +251,7 @@ h5{
     border-radius: 50%;
     position: relative;
     left: -6px;
-    top: 45px;
+    top: 30px;
 }
 
 
@@ -297,6 +297,11 @@ h5{
     line-height: 2;
     font-size: smaller;
 }
+.skill-description{
+    min-height: 120px;
+    align-items: center;
+    display: flex;
+}
 
 /* Projects */
 #project-content{
@@ -305,9 +310,15 @@ h5{
     height: 500px;
     width: 800px;
 }
+.projects-all{
+    height: 340px;
+}
 .project-indiv{
     display: grid;
-    grid-template-columns: 450px 350px;
+    width: 800px;
+    grid-template-columns: 1fr 1fr;
+    height: calc(100% - 80px);
+    padding: 40px;
 }
 .project-indiv h4{
     color: rgb(255, 0, 106);
@@ -320,12 +331,44 @@ h5{
     font-size: 12px;
     line-height: 2;
     padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.project-img{
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+.more{
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 40px);
+    height: 30px;
+    background-color: #54545480;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: bold;
+    color: rgb(212 255 19);
+}
+.project-img div.cssbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .project-indiv img{
     width: 100%;
     height: auto;
     margin: 10px 0;
     border-radius: 7px;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 260px;
 }
 #project-nav{
     display: flex;
@@ -348,6 +391,7 @@ h5{
 #project-nav div span{
     opacity: 0;
     text-transform: uppercase;
+    text-align: center;
 }
 #link-silbato{
     opacity: 1;
@@ -364,6 +408,12 @@ h5{
 }
 #link-lostspirit{
     background-image: url('../img/lostspirit-tmb.png');
+}
+#link-quack{
+    background-image: url('../img/quack-tmb.png');
+}
+#link-ecosystem{
+    background-image: url('../img/eco-tmb.png');
 }
 #project-nav div:hover{
     background-image: none;
@@ -418,7 +468,7 @@ h5{
         padding-bottom: 25px;
         margin-bottom: 25px;
     }
-    #skill-design, #skill-web{
+    #skill-games, #skill-design{
         border-bottom: 1px solid rgb(163, 169, 169);
     }
     main{
@@ -447,15 +497,16 @@ h5{
         overflow-x: hidden;
     }
     #aboutMe{
-        display: block;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
     }
     #blurb-mobile{
         font-size: smaller;
         line-height: 2.5;
-        padding: 10px;
+        padding: 60px;
         display: flex;
-        width: calc(100% - 40px);
-        margin: auto;
+        height: -webkit-fill-available;
     }
     .tilted{
         max-width: calc(80% - 20px);
@@ -499,17 +550,37 @@ h5{
     .vertical-line{
         border-left: 0px;
     }
+    #projects-content{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        width: 100%;
+    }
     #project-nav{
+        padding: 0 40px;
         display: grid;
-        padding: 50px;
-        grid-template-columns: auto auto;
+        grid-template-rows: max-content max-content;
+        grid-auto-flow: column;
+    }
+    #project-nav div {
+        height: 65px;
+        width: 65px;
+    }
+    .project-indiv{
+        width: auto;
+        padding: 0;
+        min-height: 440px;
     }
     .project-indiv img {
         max-width: 80%;
     }
     .project-img{
         text-align: center;
-        margin-top: 50px;
+        /*margin-top: 50px;*/
+        justify-self: center;
+    }
+    .projects-all{
+        height: auto;
     }
     .project-indiv{
         grid-template-columns: auto;

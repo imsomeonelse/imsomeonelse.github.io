@@ -54,29 +54,35 @@ $(() => {
         _$titleProjects = $('#title-projects');
         _$titleContact = $('#title-contact');
 
-        _$sectionYears[0] = $("#2020");
-        _$sectionYears[1] = $("#2019");
+        _$sectionYears[5] = $("#2022");
+        _$sectionYears[4] = $("#2021");
+        _$sectionYears[3] = $("#2019");
         _$sectionYears[2] = $("#2018");
-        _$sectionYears[3] = $("#2017");
-        _$sectionYears[4] = $("#2016");
+        _$sectionYears[1] = $("#2017");
+        _$sectionYears[0] = $("#2016");
 
-        _$linksYears[0] = $("#link2020");
-        _$linksYears[1] = $("#link2019");
+        _$linksYears[5] = $("#link2022");
+        _$linksYears[4] = $("#link2021");
+        _$linksYears[3] = $("#link2019");
         _$linksYears[2] = $("#link2018");
-        _$linksYears[3] = $("#link2017");
-        _$linksYears[4] = $("#link2016");
+        _$linksYears[1] = $("#link2017");
+        _$linksYears[0] = $("#link2016");
 
         _$linksProjects[0] = $("#link-silbato");
         _$linksProjects[1] = $("#link-sulky");
         _$linksProjects[2] = $("#link-arr");
         _$linksProjects[3] = $("#link-kitsune");
         _$linksProjects[4] = $("#link-lostspirit");
+        _$linksProjects[5] = $("#link-quack");
+        _$linksProjects[6] = $("#link-ecosystem");
 
         _$indivProjects[0] = $("#silbato");
         _$indivProjects[1] = $("#sulky");
         _$indivProjects[2] = $("#arr");
         _$indivProjects[3] = $("#kitsune");
         _$indivProjects[4] = $("#lost-spirit");
+        _$indivProjects[5] = $("#quack");
+        _$indivProjects[6] = $("#ecosystem");
 
         _$dot = $(".dot");
 
@@ -143,7 +149,7 @@ $(() => {
                 _$sectionYears.forEach(element => {
                     element.fadeOut();
                 });
-                _$dot.css("top", 30*(i+1)*1.5);
+                _$dot.css("top", 30 * (_$linksYears.length-i) + 15 * (_$linksYears.length-i-1));
                 _$sectionYears[i].delay(500).fadeIn();
                 _currentYear = i;
             });
@@ -155,7 +161,7 @@ $(() => {
                     _$indivProjects[i].fadeOut();
                     _$linksProjects[i].css("opacity", 0.5);
                 }
-                _$indivProjects[i].delay(400).fadeIn();
+                _$indivProjects[i].delay(500).fadeIn();
                 _$linksProjects[i].css("opacity",1);
             });
         }
