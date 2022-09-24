@@ -214,6 +214,7 @@ h4{
     display: grid;
     grid-template-columns: 80px auto 30px 50px;
     text-align: right;
+    min-height: 500px;
 }
 .timeline-container ul li{
     border-bottom: 1px solid rgb(64, 66, 66);
@@ -225,6 +226,11 @@ h4{
     left: 50%;
     margin-left: -1px;
     top: 0;
+}
+#text-container{
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 h5{
     font-style: italic;
@@ -340,6 +346,12 @@ h5{
     position: relative;
     justify-content: center;
 }
+.thumb-container{
+    width: auto;
+    height: auto;
+    position: relative;
+    display: inline-block;
+}
 .more{
     position: absolute;
     bottom: 0;
@@ -354,6 +366,8 @@ h5{
     letter-spacing: 5px;
     font-weight: bold;
     color: rgb(212 255 19);
+    border-radius: 0 0 7px 7px;
+    margin: 13px 0;
 }
 .project-img div.cssbox {
     display: flex;
@@ -361,8 +375,6 @@ h5{
     justify-content: center;
 }
 .project-indiv img{
-    width: 100%;
-    height: auto;
     margin: 10px 0;
     border-radius: 7px;
     height: auto;
@@ -450,6 +462,11 @@ h5{
 }
 #aboutMe{
     display: none;
+}
+.pink{
+    color: rgb(255, 0, 106);
+    font-weight: bold;
+    border-bottom: 2px solid rgb(255, 0, 106)!important;
 }
 
 /*Responsive*/
@@ -557,7 +574,6 @@ h5{
         width: 100%;
     }
     #project-nav{
-        padding: 0 40px;
         display: grid;
         grid-template-rows: max-content max-content;
         grid-auto-flow: column;
@@ -573,6 +589,14 @@ h5{
     }
     .project-indiv img {
         max-width: 80%;
+    }
+    .thumb-container {
+        display: flex;
+        justify-content: center;
+    }
+    .more {
+        width: calc(80% - 40px);
+        margin: 10px 0;
     }
     .project-img{
         text-align: center;

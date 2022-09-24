@@ -122,26 +122,25 @@ $(() => {
             openContact();
         });
 
-        _$upBtn.click(()=>{
-            if(_currentYear-1>=0){
-                _currentYear--;
-                _$sectionYears.forEach(element => {
-                    element.fadeOut();
-                });
-                _$dot.css("top", 30*(_currentYear+1)*1.5);
-                _$sectionYears[_currentYear].delay(500).fadeIn();
+        $(window).bind('mousewheel', function(event) {
+            if(_$sectionExperience.css('display') != 'none')
+            {
+                if (event.originalEvent.wheelDelta >= 0) {
+                    upYear();
+                }
+                else {
+                    downYear();
+                }
+
             }
         });
 
         _$downBtn.click(()=>{
-            if(_currentYear+1<_$sectionYears.length){
-                _currentYear++;
-                _$sectionYears.forEach(element => {
-                    element.fadeOut();
-                });
-                _$dot.css("top", 30*(_currentYear+1)*1.5);
-                _$sectionYears[_currentYear].delay(500).fadeIn();
-            }
+            downYear();
+        });
+        
+        _$upBtn.click(()=>{
+            upYear();
         });
 
         for(let i=0; i<_$linksYears.length; i++){
@@ -152,6 +151,10 @@ $(() => {
                 _$dot.css("top", 30 * (_$linksYears.length-i) + 15 * (_$linksYears.length-i-1));
                 _$sectionYears[i].delay(500).fadeIn();
                 _currentYear = i;
+                _$linksYears.forEach(element => {
+                    element.removeClass('pink');
+                });
+                _$linksYears[i].addClass('pink');
             });
         }
 
@@ -176,6 +179,33 @@ $(() => {
                 _$menu.fadeOut();
             }
         });
+    }
+
+    let upYear = () => {
+        _currentYear = (_currentYear + 1) % _$linksYears.length;
+        _$sectionYears.forEach(element => {
+            element.fadeOut();
+        });
+        _$dot.css("top", 30 * (_$linksYears.length-_currentYear) + 15 * (_$linksYears.length-_currentYear-1));
+        _$sectionYears[_currentYear].delay(500).fadeIn("fast");
+        _$linksYears.forEach(element => {
+            element.removeClass('pink');
+        });
+        _$linksYears[_currentYear].addClass('pink');
+    }
+
+    let downYear = () => {
+        _currentYear = _currentYear == 0 ? _$linksYears.length - 1 : _currentYear - 1;
+
+        _$sectionYears.forEach(element => {
+            element.fadeOut();
+        });
+        _$dot.css("top", 30 * (_$linksYears.length-_currentYear) + 15 * (_$linksYears.length-_currentYear-1));
+        _$sectionYears[_currentYear].delay(500).fadeIn("fast");
+        _$linksYears.forEach(element => {
+            element.removeClass('pink');
+        });
+        _$linksYears[_currentYear].addClass('pink');
     }
 
     let closeAbout = () => {
@@ -264,6 +294,7 @@ $(() => {
     let init = () => {
         cacheDom();
         fx();
+        _currentYear = _$linksYears.length - 1;
     }
 
     init();
