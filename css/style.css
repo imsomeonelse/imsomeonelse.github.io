@@ -577,6 +577,7 @@ h5{
         display: grid;
         grid-template-rows: max-content max-content;
         grid-auto-flow: column;
+        padding: 0 40px;
     }
     #project-nav div {
         height: 65px;
