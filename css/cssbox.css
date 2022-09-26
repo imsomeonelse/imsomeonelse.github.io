@@ -50,9 +50,11 @@ a.cssbox_close {
   right: 1%
 }
 
+/*
 a.cssbox_close::after {
   content: '\00d7';
 }
+*/
 
 a.cssbox_prev,
 a.cssbox_next {
